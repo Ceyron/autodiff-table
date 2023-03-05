@@ -226,6 +226,107 @@ MathJax = {
       $
     </td>
   </tr>
+  <tr>
+    <!-- L2 Loss-->
+    <td>L2 Loss</td>
+    <td>
+      $
+        l = \frac{1}{2}||\mathbf{x}||_2^2
+      $
+    </td>
+    <td>
+      $
+        \dot{l} = \mathbf{x}^T \dot{\mathbf{x}}
+      $
+    </td>
+    <td>
+      $
+        \bar{\mathbf{x}} = \, \bar{l} \, \mathbf{x}
+      $
+    </td>
+  </tr>
+  <tr>
+    <!-- Scalar Function Broadcasting-->
+    <td>Scalar Function Broadcasting</td>
+    <td>
+      $
+        \mathbf{z} = \sigma.( \mathbf{x} )
+      $
+    </td>
+    <td>
+      $
+        \dot{\mathbf{z}} = \sigma'.( \mathbf{x} ) \odot \dot{\mathbf{x}}
+      $
+    </td>
+    <td>
+      $
+        \bar{\mathbf{x}} = \bar{\mathbf{z}} \odot \sigma'.( \mathbf{x} )
+      $
+    </td>
+  </tr>
+  <tr>
+    <!-- FFT-->
+    <td>FFT</td>
+    <td>
+      $
+        \mathbf{z} = \text{fft}( \mathbf{x} )
+      $
+    </td>
+    <td>
+      $
+        \dot{\mathbf{z}} = \text{fft}( \dot{\mathbf{x}} )
+      $
+    </td>
+    <td>
+      $
+        \bar{\mathbf{x}} = \text{fft}( \bar{\mathbf{z}} )
+      $
+    </td>
+  </tr>
+  <tr>
+    <!-- Vector Unary Function-->
+    <td>Vector Unary Function</td>
+    <td>
+      $
+        \mathbf{z} = f(\mathbf{x})
+      $
+    </td>
+    <td>
+      $
+        \dot{\mathbf{z}} = \frac{\partial f}{\partial \mathbf{x}} \dot{\mathbf{x}}
+      $
+    </td>
+    <td>
+      $
+      \begin{align}
+        \bar{\mathbf{x}}^T &= \bar{\mathbf{z}}^T \frac{\partial f}{\partial \mathbf{x}}
+        \\
+        &\text{or}
+        \\
+        \bar{\mathbf{x}} &= \left( \frac{\partial f}{\partial \mathbf{x}} \right)^T \bar{\mathbf{z}}
+      \end{align}
+      $
+    </td>
+  </tr>
+  <tr>
+    <!-- General Vector Function-->
+    <td>General Vector Function</td>
+    <td>
+      $
+        \left\{ \mathbf{z}^{[i]}\right\}_{i=1}^n = f(\left\{ \mathbf{x}^{[j]}\right\}_{j=1}^m)
+      $
+    </td>
+    <td>
+      $
+        \dot{\mathbf{z}}^{[i]} = \sum_{j=1}^m \frac{\partial f^{[i]}}{\partial \mathbf{x}^{[j]}} \dot{\mathbf{x}}^{[j]}
+      $
+    </td>
+    <td>
+      $
+        \bar{\mathbf{x}}^{[j],T} = \sum_{i=1}^n \bar{\mathbf{z}}^{[i],T} \frac{\partial f^{[i]}}{\partial \mathbf{x}^{[j]}}
+      $
+    </td>
+  </tr>
   </tbody>
 
 </table> 
