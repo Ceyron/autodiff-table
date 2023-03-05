@@ -59,6 +59,37 @@ MathJax = {
       $
     </td>
   </tr>
+  <tr>
+    <!-- Neural ODEs -->
+    <td>Neural ODEs</td>
+    <td>
+      $
+        \mathbf{u} = \left\{ \text{integrate} \; \frac{d \mathbf{u}}{d t} = \mathbf{f}(\mathbf{u}, \mathbf{\theta}) \; \text{with} \; \mathbf{u}|_{t=0} = \mathbf{u}_0 \; \text{to} \; \mathbf{u}|_{t=T} \right\}
+      $
+    </td>
+    <td>
+      $
+        \begin{align}
+          \dot{\mathbf{u}}_\theta &= \left\{ \text{integrate} \; \frac{d \dot{\mathbf{u}}_\theta}{d t} = \frac{\partial \mathbf{f}}{\partial \mathbf{u}} \dot{\mathbf{u}}_{\theta} + \frac{\partial \mathbf{f}}{\partial \mathbf{\theta}} \dot{\mathbf{\theta}} \; \text{with} \; \dot{\mathbf{u}}_\theta|_{t=0} = \mathbf{0} \; \text{to} \; \dot{\mathbf{u}}_\theta|_{t=T} \right\}
+          \\
+          \dot{\mathbf{u}}_{u_0} &= \left\{ \text{integrate} \; \frac{d \dot{\mathbf{u}}_{u_0}}{d t} = \frac{\partial \mathbf{f}}{\partial \mathbf{u}} \dot{\mathbf{u}}_{u_0} \; \text{with} \; \dot{\mathbf{u}}_{u_0}|_{t=0} = \dot{\mathbf{u}}_0 \; \text{to} \; \dot{\mathbf{u}}_{u_0}|_{t=T} \right\}
+          \\
+          \dot{\mathbf{u}}_T &= \mathbf{f}(\mathbf{u}(T), \mathbf{\theta}) \cdot \dot{T}
+        \end{align}
+      $
+    </td>
+    <td>
+      $
+        \begin{align}
+          \bar{\mathbf{u}}_0 &= \bar{\mathbf{u}}_\theta \cdot \dot{\mathbf{u}}_{u_0} + \bar{\mathbf{u}}_{u_0} \cdot \dot{\mathbf{u}}_{u_0} + \bar{\mathbf{u}}_T \cdot \dot{\mathbf{u}}_{u_0}
+          \\
+          \bar{\mathbf{\theta}} &= \bar{\mathbf{u}}_\theta \cdot \dot{\mathbf{u}}_\theta
+          \\
+          \bar{T} &= \bar{\mathbf{u}}_T \cdot \dot{T}
+        \end{align}
+      $
+    </td>
+  </tr>
 </table> 
 
 
