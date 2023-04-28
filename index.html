@@ -246,8 +246,8 @@ MathJax = {
     </td>
   </tr>
   <tr>
-    <!-- L2 Loss-->
-    <td>L2 Loss</td>
+    <!-- l2 Loss-->
+    <td>l2 Loss (unscaled)</td>
     <td>
       $
         l = \frac{1}{2}||\mathbf{x}||_2^2
@@ -264,6 +264,25 @@ MathJax = {
         \bar{\mathbf{x}} = \, \bar{l} \, \mathbf{x}
       $
       <small><a href="https://youtu.be/TonUAqYCWAY">🔗</a></small>
+    </td>
+  </tr>
+  <tr>
+    <!-- L2 loss (MSE) -->
+    <td>L2 Loss (MSE)</td>
+    <td>
+      $
+        l = \frac{1}{2N}||\mathbf{x} - \mathbf{y}||_2^2
+      $
+    </td>
+    <td>
+      $
+        \dot{l} = \frac{1}{N}(\mathbf{x} - \mathbf{y})^T \dot{\mathbf{x}}
+      $
+    </td>
+    <td>
+      $
+        \bar{\mathbf{x}} = \, \frac{\bar{l}}{N} \, \mathbf{x}
+      $
     </td>
   </tr>
   <tr>
