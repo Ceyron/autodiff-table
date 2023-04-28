@@ -292,6 +292,29 @@ MathJax = {
     </td>
   </tr>
   <tr>
+    <!-- Elementwise multiplication -->
+    <td>Elementwise Multiplication</td>
+    <td>
+      $
+        \mathbf{C} = \mathbf{A} \odot \mathbf{B}
+      $
+    </td>
+    <td>
+      $
+        \dot{\mathbf{C}} = \dot{\mathbf{A}} \odot \mathbf{B} + \mathbf{A} \odot \dot{\mathbf{B}}
+      $
+    </td>
+    <td>
+      $
+      \begin{align}
+        \bar{\mathbf{A}} &= \bar{\mathbf{C}} \odot \mathbf{B}
+        \\
+        \bar{\mathbf{B}} &= \bar{\mathbf{C}} \odot \mathbf{A}
+      \end{align}
+      $
+    </td>
+  </tr>
+  <tr>
     <!-- l2 Loss-->
     <td>l2 Loss (unscaled)</td>
     <td>
