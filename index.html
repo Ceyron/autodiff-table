@@ -405,6 +405,27 @@ MathJax = {
     </td>
   </tr>
   <tr>
+    <!-- Softmax-->
+    <td>Softmax</td>
+    <td>
+      $\begin{align}
+        \mathbf{z} &= \frac{\exp .(\mathbf{x})}{\mathbf{1}^T \exp . (\mathbf{x})} 
+        \\
+        z_i &= \frac{\exp(x_i)}{\sum_j \exp(x_j)}
+      \end{align}$
+    </td>
+    <td>
+      $
+        \dot{\mathbf{z}} = \mathbf{z} \odot \dot{\mathbf{x}} - \mathbf{z} (\mathbf{z}^T \dot{\mathbf{x}})
+      $
+    </td>
+    <td>
+      $
+        \bar{\mathbf{x}} = \bar{\mathbf{z}} \odot \mathbf{z} - \mathbf{z} (\bar{\mathbf{z}}^T \mathbf{z})
+      $
+    </td>
+  </tr>
+  <tr>
     <!-- Vector Unary Function-->
     <td>Vector Unary Function</td>
     <td>
