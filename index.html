@@ -457,6 +457,34 @@ MathJax = {
       $
     </td>
   </tr>
+  <!-- IRFFT -->
+  <tr>
+    <td>IRFFT</td>
+    <td>
+      $
+        \mathbf{z} = \text{irfft}( \mathbf{x} )
+      $
+    </td>
+    <td>
+      $
+        \dot{\mathbf{z}} = \text{irfft}( \dot{\mathbf{x}} )
+      $
+    </td>
+    <td>
+      JAX
+      <br>
+      $
+        \begin{align}
+          <!-- \bar{\mathbf{x}} &= \mathcal{R}(\text{ifft}( \text{pad}(\bar{\mathbf{z}}, (0, N//2 - 1) ))) -->
+           t &= \text{rfft}(\bar{z})
+           \\
+           t_{1:(N//2)} &= 2 \cdot t_{1:(N//2)}
+           \\
+           \bar{x} &= \frac{1}{N} t
+        \end{align}
+      $
+    </td>
+  </tr>
   <tr>
     <!-- Softmax-->
     <td>Softmax</td>
