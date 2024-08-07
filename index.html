@@ -552,6 +552,96 @@ MathJax = {
       $
     </td>
   </tr>
+  <tr>
+    <td><b>Array Manipulations</b></td>
+    <td colspan="3"></td>
+  </tr>
+  <tr>
+    <!-- Concatenation-->
+    <td>Concatenation</td>
+    <td>
+      $
+        \mathbf{z} = \text{concat}(\mathbf{x}, \mathbf{y})
+      $
+    </td>
+    <td>
+      $
+        \dot{\mathbf{z}} = \text{concat}(\dot{\mathbf{x}}, \dot{\mathbf{y}})
+      $
+    </td>
+    <td>
+      $
+        \begin{align}
+          \bar{\mathbf{x}} &= \text{slice}(\bar{\mathbf{z}}, 0, \text{len}(\mathbf{x}))
+          \\
+          \bar{\mathbf{y}} &= \text{slice}(\bar{\mathbf{z}}, \text{len}(\mathbf{x}), \text{len}(\mathbf{z}))
+        \end{align}
+      $
+    </td>
+  </tr>
+  <tr>
+    <!-- Slicing-->
+    <td>Slicing</td>
+    <td>
+      $
+        \mathbf{z} = \text{slice}(\mathbf{x}, a, b)
+      $
+    </td>
+    <td>
+      $
+        \dot{\mathbf{z}} = \text{slice}(\dot{\mathbf{x}}, a, b)
+      $
+    </td>
+    <td>
+      $
+        \begin{align}
+          \bar{\mathbf{x}} &= \text{concat}(\text{zeros}(a), \bar{\mathbf{z}}, \text{zeros}(\text{len}(\mathbf{x}) - b))
+          \\
+          &\text{or}
+          \\
+          \bar{\mathbf{x}} &= \text{pad}(\bar{\mathbf{z}}, (a, \text{len}(\mathbf{x}) - b))
+        \end{align}
+      $
+    </td>
+  </tr>
+  <tr>
+    <!-- Padding-->
+    <td>(Zero) Padding</td>
+    <td>
+      $
+        \mathbf{z} = \text{pad}(\mathbf{x}, (a, b))
+      $
+    </td>
+    <td>
+      $
+        \dot{\mathbf{z}} = \text{pad}(\dot{\mathbf{x}}, (a, b))
+      $
+    </td>
+    <td>
+      $
+        \bar{\mathbf{x}} = \text{slice}(\bar{\mathbf{z}}, a, \text{len}(\mathbf{z}) - b)
+      $
+    </td>
+  </tr>
+  <tr>
+    <!-- Reshaping-->
+    <td>Reshaping</td>
+    <td>
+      $
+        \mathbf{z} = \text{reshape}(\mathbf{x}, \text{shape}(\mathbf{z}))
+      $
+    </td>
+    <td>
+      $
+        \dot{\mathbf{z}} = \text{reshape}(\dot{\mathbf{x}}, \text{shape}(\mathbf{z}))
+      $
+    </td>
+    <td>
+      $
+        \bar{\mathbf{x}} = \text{reshape}(\bar{\mathbf{z}}, \text{shape}(\mathbf{x}))
+      $
+    </td>
+  </tr>
   </tbody>
 
 </table> 
