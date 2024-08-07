@@ -400,8 +400,14 @@ MathJax = {
     </td>
     <td>
       $
-        \bar{\mathbf{x}} = \text{fft}( \bar{\mathbf{z}} )
+        \begin{align}
+          \text{JAX} \quad \bar{\mathbf{x}} &= \text{fft}( \bar{\mathbf{z}} )
+          \\
+          \text{PyTorch} \quad \bar{\mathbf{x}} &= \text{fft}( \bar{\mathbf{z}}^* )
+        \end{align}
       $
+      <br>
+      <a href="https://github.com/google/jax/issues/4891">Details on Differences</a>
     </td>
   </tr>
   <tr>
