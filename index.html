@@ -411,6 +411,30 @@ MathJax = {
     </td>
   </tr>
   <tr>
+    <!-- IFFT-->
+    <td>IFFT</td>
+    <td>
+      $
+        \mathbf{z} = \text{ifft}( \mathbf{x} )
+      $
+    </td>
+    <td>
+      $
+        \dot{\mathbf{z}} = \text{ifft}( \dot{\mathbf{x}} )
+      $
+    </td>
+    <td>
+      $
+        \begin{align}
+          \text{JAX} \quad \bar{\mathbf{x}} &= \text{ifft}( \bar{\mathbf{z}} )
+          \\
+          \text{PyTorch} \quad \bar{\mathbf{x}} &= \text{ifft}( \bar{\mathbf{z}}^* )
+        \end{align}
+      $
+      <br>
+    <td>
+  </tr>
+  <tr>
     <!-- Softmax-->
     <td>Softmax</td>
     <td>
