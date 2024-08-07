@@ -435,6 +435,27 @@ MathJax = {
     <td>
   </tr>
   <tr>
+    <!-- RFFT -->
+    <td>RFFT</td>
+    <td>
+      $
+        \mathbf{z} = \text{rfft}( \mathbf{x} )
+      $
+    </td>
+    <td>
+      $
+        \dot{\mathbf{z}} = \text{rfft}( \dot{\mathbf{x}} )
+      $
+    </td>
+    <td>
+      $
+        \begin{align}
+          \text{JAX} \quad \bar{\mathbf{x}} &= \mathcal{R}(\text{fft}( \text{pad}(\bar{\mathbf{z}}, (0, N//2 - 1) )))
+        \end{align}
+      $
+    </td>
+  </tr>
+  <tr>
     <!-- Softmax-->
     <td>Softmax</td>
     <td>
