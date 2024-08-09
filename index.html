@@ -554,6 +554,65 @@ MathJax = {
     </td>
   </tr>
   <tr>
+    <!-- General Convolution -->
+    <td>
+      General Convolution
+      <br>
+      (holds per spatial axis)
+    </td>
+    <td>
+<pre>z = conv(
+  x, w,
+  padding=(p_l, p_r),
+  stride=s,
+  dilation=d,
+  fill=f
+)
+</pre>
+    </td>
+    <td>
+<pre>dot_z = conv(
+  dot_x, w,
+  padding=(p_l, p_r),
+  stride=s,
+  dilation=d,
+  fill=f
+) + conv(
+  x, dot_w,
+  padding=(p_l, p_r),
+  stride=s,
+  dilation=d,
+  fill=f
+)
+    </td>
+    <td>
+<pre>
+c = s*((N - K + p_l + p_r) // s)
+</pre>
+<pre>x_cot = conv(
+  z_cot, w,
+  padding=(K - p_l - 1, N + p_l - 1 - c),
+  stride=f,
+  dilation=d,
+  fill=s,
+  flip_kernel=True,
+  permute_kernel=True,
+)
+</pre>
+<pre>w_cot = conv(
+  x, z_cot,
+  padding=(p_l, K - N - p_l + c),
+  stride=d,
+  dilation=s,
+  fill=f,
+  permute_kernel=True,
+  permute_input=True,
+)
+</pre>
+    </td>
+
+  </tr>
+  <tr>
     <!-- Vector Unary Function-->
     <td>Vector Unary Function</td>
     <td>
