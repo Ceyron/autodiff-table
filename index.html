@@ -509,6 +509,39 @@ MathJax = {
     </td>
   </tr>
   <tr>
+    <!-- Convolution with Arbitrary Zero Padding -->
+    <td>Convolution with Arbitrary Zero Padding<br><a href="https://fkoehler.site/conv-autodiff-table-reworked/"</td>
+    <td>
+<pre>z = conv(
+  x, w,
+  padding=(p_l, p_r),
+)</pre>
+    </td>
+    <td>
+<pre>dot_z = conv(
+  dot_x, w,
+  padding=(p_l, p_r),
+) + conv(
+  x, dot_w,
+  padding=(p_l, p_r),
+)</pre>
+    </td>
+    <td>
+<pre>x_cot = conv(
+  z_cot, w,
+  padding=(K-1-p_l, K-1-p_r),
+  flip_kernel=True,
+  permute_kernel=True,
+)</pre>
+<pre>w_cot = conv(
+  x, z_cot,
+  padding=(p_l, p_r),
+  permute_kernel=True,
+  permute_input=True,
+)</pre>
+    </td>
+  </tr>
+  <tr>
     <!-- Vector Unary Function-->
     <td>Vector Unary Function</td>
     <td>
