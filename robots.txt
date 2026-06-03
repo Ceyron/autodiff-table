@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ceyron.github.io/autodiff-table/sitemap.xml
