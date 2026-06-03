@@ -771,6 +771,44 @@ c = s*((N - K + p_l + p_r) // s)
       $
     </td>
   </tr>
+  <tr>
+    <!-- Reduction (Sum)-->
+    <td>Reduction (Sum)</td>
+    <td>
+      $
+        z = \mathbf{1}^T \mathbf{x} = \sum_i x_i
+      $
+    </td>
+    <td>
+      $
+        \dot{z} = \mathbf{1}^T \dot{\mathbf{x}}
+      $
+    </td>
+    <td>
+      $
+        \bar{\mathbf{x}} = \bar{z} \, \mathbf{1}
+      $
+    </td>
+  </tr>
+  <tr>
+    <!-- Broadcasting (Replicate)-->
+    <td>Broadcasting</td>
+    <td>
+      $
+        \mathbf{z} = x \, \mathbf{1}
+      $
+    </td>
+    <td>
+      $
+        \dot{\mathbf{z}} = \dot{x} \, \mathbf{1}
+      $
+    </td>
+    <td>
+      $
+        \bar{x} = \mathbf{1}^T \bar{\mathbf{z}}
+      $
+    </td>
+  </tr>
   </tbody>
 
 </table> 
