@@ -526,9 +526,9 @@ MathJax = {
           <!-- \bar{\mathbf{x}} &= \mathcal{R}(\text{ifft}( \text{pad}(\bar{\mathbf{z}}, (0, N//2 - 1) ))) -->
            t &= \text{rfft}(\bar{z})
            \\
-           t_{1:(N//2)} &= 2 \cdot t_{1:(N//2)}
+           t_{1:((N+1)//2)} &= 2 \cdot t_{1:((N+1)//2)}
            \\
-           \bar{x} &= \frac{1}{N} t
+           \bar{x} &= \frac{1}{N} t^*
         \end{align}
       $
     </td>
